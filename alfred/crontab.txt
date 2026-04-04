@@ -1,0 +1,36 @@
+# Alfred Orchestration -- Crontab Template
+# Customize times, agents, and paths for your setup.
+# Install: crontab alfred/crontab.txt
+#
+# Environment variables (set in crontab or /etc/environment):
+#   CHANNEL_BOT_TOKEN -- your messaging bot token
+#   CHANNEL_CHAT_ID -- your chat/channel ID
+#
+# Each agent: bash /path/to/alfred/run_agent.sh <agent_name>
+
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin
+FORGE_ROOT=/home/youruser/FORGE
+
+# Set your timezone
+TZ=America/Los_Angeles
+
+# Set your messaging credentials
+# CHANNEL_BOT_TOKEN=your-token-here
+# CHANNEL_CHAT_ID=your-chat-id-here
+
+# === EXAMPLE SCHEDULE ===
+# Uncomment and customize:
+
+# Daily agents
+# 0 7 * * * bash $FORGE_ROOT/alfred/run_agent.sh morning_briefing >> $FORGE_ROOT/alfred/morning_briefing/cron.log 2>&1
+# 0 21 * * * bash $FORGE_ROOT/alfred/run_agent.sh evening_briefing >> $FORGE_ROOT/alfred/evening_briefing/cron.log 2>&1
+
+# Health checks (every 6 hours)
+# 0 0,6,12,18 * * * bash $FORGE_ROOT/alfred/run_agent.sh sync_warden >> $FORGE_ROOT/alfred/sync_warden/cron.log 2>&1
+
+# Dispatch runner (every 30 min -- picks up approved tasks)
+# */30 * * * * bash $FORGE_ROOT/alfred/dispatch_queue/dispatch_runner.sh >> $FORGE_ROOT/alfred/dispatch_queue/cron.log 2>&1
+
+# Weekly review
+# 0 20 * * 0 bash $FORGE_ROOT/alfred/run_agent.sh weekly_review >> $FORGE_ROOT/alfred/weekly_review/cron.log 2>&1
