@@ -75,7 +75,7 @@ The most valuable part of this protocol. When content is relevant to a folder bu
 
 **DO:** Add a pointer row in the README referencing the canonical location.
 ```
-| Integration Playbook | `../../ProjectB/Clinical/INTEGRATION_PLAYBOOK.md` | Integration strategy |
+| EHR Playbook | `../../2OPMD/Clinical/EHR_INTEGRATION_PLAYBOOK.md` | Integration strategy |
 ```
 
 **DON'T:** Copy the file into the folder. Copies drift. Pointers don't.
@@ -109,8 +109,8 @@ Signposts rot. A stale README is worse than no README because it gives false con
 
 | Depth | Signpost? | Example |
 |-------|-----------|---------|
-| Project root | **Yes, always** | `2026_ProjectB/README.md` |
-| First-level folders | **Yes, always** | `SubprojectA/README.md`, `SubprojectB/README.md` |
+| Project root | **Yes, always** | `2026_2OPMD/README.md` |
+| First-level folders | **Yes, always** | `EoH/README.md`, `2OPMD/README.md` |
 | Second-level folders | **Yes, if routing isn't obvious** | `Canonical/README.md` (has hard rules), `Data/` (merged sources) |
 | Third-level and deeper | **No, unless pointer-heavy** | Skip `V5.2 Individual Modules/` -- the path says it all |
 

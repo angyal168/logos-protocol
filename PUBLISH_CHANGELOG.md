@@ -1,43 +1,11 @@
 # Publish Changelog
 
-Changes relevant to the open-source Logos Protocol. Commands with model routing are logged since they affect protocol execution.
+> Changes since last publish to GitHub. Logos appends here at /bankcoals. /publish clears after pushing.
 
-- 2026-04-04 | alfred | engine | published Alfred orchestration engine (run_agent.sh, model_map.conf, dispatch_queue, ollama_run.sh, crontab template). No agents included -- build your own crew.
-- 2026-04-03 | command | stoke | added Fleet Routing section explaining model delegation per phase
-- 2026-04-03 | command | bankcoals | added Fleet Routing section explaining model delegation per phase
-- 2026-04-03 | command | ab-test-setup | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | ad-creative | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | ai-seo | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | analytics-tracking | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | churn-prevention | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | cold-email | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | competitor-alternatives | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | content-calendar-sms | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | content-repurposer-sms | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | content-strategy | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | content-strategy-sms | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | copywriting | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | copy-editing | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | form-cro | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | free-tool-strategy | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | hook-writer-sms | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | lead-magnets | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | marketing-ideas | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | marketing-psychology | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | page-cro | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | paid-ads | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | popup-cro | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | post-writer-sms | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | pricing-strategy | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | programmatic-seo | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | refusal-program | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | sales-enablement | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | schema-markup | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | seo-audit | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | signal-digest | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | signup-flow-cro | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | site-architecture | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | social-content | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | thread-writer-sms | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | ui-ux-pro | added model: claude-sonnet-4-6 frontmatter
-- 2026-04-03 | command | viral-content | added model: claude-sonnet-4-6 frontmatter
+---
+
+<!-- Format: - YYYY-MM-DD | type | name | description -->
+- 2026-04-03 | meta | publish-system | Changelog moved to ~/github/logos-protocol/. Old path cleared. /publish command updated with new paths and marketing-only command allowlist.
+- 2026-04-03 | commands | 43 marketing commands | Full marketing/CRO suite added to public repo (ab-test-setup through yt-clipper)
+- 2026-04-03 | cleanup | privacy-scrub | All personal identifiers removed. Alfred stripped. Session commands generalized (/bank, /init). 13 internal commands deleted.
+- 2026-04-03 | meta | two-tier-model | Public MIT gets marketing suite only. Philip (cousin@) gets full protocol.

@@ -1,4 +1,5 @@
 ---
+model: claude-sonnet-4-6
 name: content-calendar-sms
 description: "When the user wants to plan a posting schedule, create a content calendar, or organize when and what to post. Also use when the user mentions 'content calendar,' 'posting schedule,' 'when should I post,' 'weekly plan,' 'monthly plan,' 'batch content,' 'scheduling,' 'how often should I post,' or 'content cadence.' For deciding what topics to cover, see content-strategy-sms. For writing the actual posts, see post-writer-sms."
 metadata:

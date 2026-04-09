@@ -1,4 +1,5 @@
 ---
+model: claude-sonnet-4-6
 name: post-writer-sms
 description: "When the user wants to write a social media post for LinkedIn, Twitter/X, Threads, or Bluesky. Also use when the user mentions 'write a post,' 'draft a post,' 'LinkedIn post,' 'tweet,' 'Threads post,' 'Bluesky post,' 'social media post,' 'help me write,' or shares a topic and wants it turned into a post. For multi-part content, see thread-writer-sms. For carousels, see carousel-writer-sms. For opening lines specifically, see hook-writer-sms."
 metadata:
