@@ -7,7 +7,7 @@
 
 - Any folder at the **top 2-3 levels** of a project hierarchy
 - Any folder where the **name alone doesn't explain the routing logic** (e.g., a folder with pointers, mixed content, or non-obvious boundaries)
-- Any folder that **automated agents need to navigate** without human guidance
+- Any folder that **Alfred or automated agents need to navigate** without human guidance
 - Any folder containing **pointer references** to content living elsewhere
 
 ## When NOT To Use
@@ -57,7 +57,7 @@ One paragraph. What lives here and what doesn't. If there's a boundary
 | **Status** | Always | Prevents agents from working in archived folders |
 | **Folder Map** | When folder has 3+ children | The routing table -- what's here, one line each |
 | **Pointers** | When content is referenced but lives elsewhere | Prevents duplication. The pointer pattern is the most valuable part of this protocol. |
-| **Owner** | Top 2 levels | So automated agents know who to route questions to |
+| **Owner** | Top 2 levels | So Alfred knows who to route questions to |
 | **Last Updated** | Top 2 levels | Staleness signal |
 
 ### Optional / Skip
@@ -88,11 +88,11 @@ The most valuable part of this protocol. When content is relevant to a folder bu
 
 Signposts rot. A stale README is worse than no README because it gives false confidence.
 
-### Automation Layer Standing Instructions
+### Alfred Standing Instructions
 
 1. **On file creation/move:** If a file is added to or removed from a signposted folder, update that folder's README.md in the same operation.
-2. **On session end (`/bank` or whatever session-end command you configure):** Spot-check top-level signposts (project root, first-level folders). Flag any with `Last Updated` older than 7 days if the folder contents have changed.
-3. **On session start (`/init` or whatever session-start command you configure):** Read top-level signposts as part of orientation. If one contradicts what you see, fix it immediately.
+2. **On /bankcoals:** Spot-check top-level signposts (project root, first-level folders). Flag any with `Last Updated` older than 7 days if the folder contents have changed.
+3. **On /stoke:** Read top-level signposts as part of orientation. If one contradicts what you see, fix it immediately.
 
 ### Staleness Rules
 
@@ -125,7 +125,7 @@ The test: **Would an agent arriving at this folder for the first time waste >30 
 | README that just echoes the folder name ("Clinical -- clinical documents") | State what's IN vs. OUT, or skip the signpost |
 | Copying files into a folder so the README can list them | Use a pointer row |
 | Writing a README for every leaf folder | Only signpost where navigation is ambiguous |
-| Letting READMEs accumulate without maintenance | Scheduled agents audit on session end |
+| Letting READMEs accumulate without maintenance | Alfred audits on /bankcoals |
 | Putting operational state in README (current tasks, blockers) | That belongs in STATUS.md, not the signpost |
 
 ---

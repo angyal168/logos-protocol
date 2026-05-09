@@ -1,5 +1,5 @@
 ---
-name: youtube-clipper
+name: youtube_clipper
 description: >
   YouTube 视频智能剪辑工具。下载视频和字幕，AI 分析生成精细章节（几分钟级别），
   用户选择片段后自动剪辑、翻译字幕为中英双语、烧录字幕到视频，并生成总结文案。

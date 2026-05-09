@@ -1,6 +1,6 @@
 ---
 model: claude-sonnet-4-6
-name: content-repurposer-sms
+name: content_repurposer_sms
 description: "When the user wants to turn one piece of content into multiple formats or adapt content across platforms. Also use when the user mentions 'repurpose,' 'turn this into,' 'adapt this for,' 'cross-post,' 'reformat,' 'blog to social,' 'newsletter to posts,' or 'get more from this content.' For writing original posts, see post-writer-sms. For threads, see thread-writer-sms. For carousels, see carousel-writer-sms."
 metadata:
   version: 1.0.0

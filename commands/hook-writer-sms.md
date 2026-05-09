@@ -1,6 +1,6 @@
 ---
 model: claude-sonnet-4-6
-name: hook-writer-sms
+name: hook_writer_sms
 description: "When the user wants help writing opening lines, hooks, or first sentences that grab attention. Also use when the user mentions 'hook,' 'opening line,' 'first line,' 'scroll stopper,' 'attention grabber,' 'headline,' 'how to start my post,' or 'nobody reads past my first line.' Can be used standalone or invoked by other creation skills. For writing full posts, see post-writer-sms. For threads, see thread-writer-sms."
 metadata:
   version: 1.0.0
