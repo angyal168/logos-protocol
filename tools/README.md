@@ -57,6 +57,12 @@ These are the tools used in the original Forge build. Each one was chosen becaus
 | **Python 3** | Scripting runtime | [python.org](https://www.python.org) |
 | **Remotion** | Programmatic video creation (React) | `npx create-video@latest` |
 
+## Scripts in this directory
+
+| Script | What It Does | When To Use |
+|--------|-------------|-------------|
+| **`fossil.sh`** | FOSL (Fear of State Loss) durability audit. Detects claude CLI processes running outside tmux -- the ones that die when the parent shell drops. | Run on demand to check session health. Wire into a 23:30 cron with `--notify` for a nightly Telegram bedtime ping before you close the laptop. |
+
 ## Hardware Recommendations
 
 You don't need a server to start. But for Levels 4-6, an always-on machine makes everything easier:
