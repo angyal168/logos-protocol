@@ -86,7 +86,7 @@ Work done well is work done thoughtfully by an operator who cares. This is not a
 
 ---
 
-## When Logos Auto-Activates These
+## When the Agent Auto-Activates These
 
 | Mode | Auto-Activate When | Auto-Deactivate When |
 |------|-------------------|---------------------|

@@ -120,34 +120,22 @@ keystroke away. Below is the reference dictionary — donor canon → generic fu
 for the common capabilities. Use it to propose option 3; extend it as new capabilities
 arrive.
 
-| Donor canon name | Generic functional name (option 3) |
+A few illustrative mappings (the donor names here are invented placeholders — your
+donor's will differ; the point is the *shape* of the translation, lore name → plain
+functional name):
+
+| Donor canon name (example) | Generic functional name (option 3) |
 |---|---|
-| stoke | session-warmup |
-| bankcoals | session-cooldown |
-| smelt | source-distill |
-| smelt-fast | source-distill-quick |
-| crucible | artifact-router |
-| sharingan | self-review-pass |
-| sharpen | adversarial-second-read |
-| soprace | anti-performative-gate |
-| augur | failure-forecast |
-| quartermaster | permission-preflight |
-| spiral-loop | convergence-loop |
-| mission | long-running-autonomous-task |
-| provision | minimal-context-injection |
-| handshake-handoff | inter-session-handoff |
-| scout-contract | subagent-task-contract |
-| stateful-context-conservation | state-reuse-discipline |
-| fail-loud | loud-failure-for-automations |
-| caveman | terse-prompt-register |
-| eli10 | plain-language-explainer |
-| humanize | paste-safe-formatting |
-| fossil | state-durability-audit |
-| (status line generator) | session-status-line |
-| route-subagent-by-workclass | compute-tier-routing |
-| no-false-walls | drill-before-declaring-blocked |
-| no-unjustified-adds | justify-before-adding |
-| three-brains | multi-model-routing |
+| firewarm | session-warmup |
+| bankdown | session-cooldown |
+| distill | source-distill |
+| router | artifact-router |
+| keepsafe | state-durability-audit |
+| terse | terse-prompt-register |
+
+Build your own dictionary as capabilities arrive: for each one, write down the plain
+functional name it "really" is underneath the donor's branding, and offer that as the
+one-keystroke default.
 | license-posture | external-license-gate |
 
 The pattern, when a capability is not in the table: name it `verb-noun`, lowercase, the
