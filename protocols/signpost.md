@@ -7,7 +7,7 @@
 
 - Any folder at the **top 2-3 levels** of a project hierarchy
 - Any folder where the **name alone doesn't explain the routing logic** (e.g., a folder with pointers, mixed content, or non-obvious boundaries)
-- Any folder that **Alfred or automated agents need to navigate** without human guidance
+- Any folder that **automated agents need to navigate** without human guidance
 - Any folder containing **pointer references** to content living elsewhere
 
 ## When NOT To Use
@@ -57,7 +57,7 @@ One paragraph. What lives here and what doesn't. If there's a boundary
 | **Status** | Always | Prevents agents from working in archived folders |
 | **Folder Map** | When folder has 3+ children | The routing table -- what's here, one line each |
 | **Pointers** | When content is referenced but lives elsewhere | Prevents duplication. The pointer pattern is the most valuable part of this protocol. |
-| **Owner** | Top 2 levels | So Alfred knows who to route questions to |
+| **Owner** | Top 2 levels | So the maintenance agent knows who to route questions to |
 | **Last Updated** | Top 2 levels | Staleness signal |
 
 ### Optional / Skip
@@ -75,7 +75,7 @@ The most valuable part of this protocol. When content is relevant to a folder bu
 
 **DO:** Add a pointer row in the README referencing the canonical location.
 ```
-| EHR Playbook | `../../2OPMD/Clinical/EHR_INTEGRATION_PLAYBOOK.md` | Integration strategy |
+| API Playbook | `../../ProjectName/docs/INTEGRATION_PLAYBOOK.md` | Integration strategy |
 ```
 
 **DON'T:** Copy the file into the folder. Copies drift. Pointers don't.
@@ -88,11 +88,11 @@ The most valuable part of this protocol. When content is relevant to a folder bu
 
 Signposts rot. A stale README is worse than no README because it gives false confidence.
 
-### Alfred Standing Instructions
+### Maintenance Agent Standing Instructions
 
 1. **On file creation/move:** If a file is added to or removed from a signposted folder, update that folder's README.md in the same operation.
-2. **On /bankcoals:** Spot-check top-level signposts (project root, first-level folders). Flag any with `Last Updated` older than 7 days if the folder contents have changed.
-3. **On /stoke:** Read top-level signposts as part of orientation. If one contradicts what you see, fix it immediately.
+2. **On session cooldown:** Spot-check top-level signposts (project root, first-level folders). Flag any with `Last Updated` older than 7 days if the folder contents have changed.
+3. **On session warmup:** Read top-level signposts as part of orientation. If one contradicts what you see, fix it immediately.
 
 ### Staleness Rules
 
@@ -109,8 +109,8 @@ Signposts rot. A stale README is worse than no README because it gives false con
 
 | Depth | Signpost? | Example |
 |-------|-----------|---------|
-| Project root | **Yes, always** | `2026_2OPMD/README.md` |
-| First-level folders | **Yes, always** | `EoH/README.md`, `2OPMD/README.md` |
+| Project root | **Yes, always** | `2026_ProjectName/README.md` |
+| First-level folders | **Yes, always** | `ProjectA/README.md`, `ProjectB/README.md` |
 | Second-level folders | **Yes, if routing isn't obvious** | `Canonical/README.md` (has hard rules), `Data/` (merged sources) |
 | Third-level and deeper | **No, unless pointer-heavy** | Skip `V5.2 Individual Modules/` -- the path says it all |
 
@@ -125,7 +125,7 @@ The test: **Would an agent arriving at this folder for the first time waste >30 
 | README that just echoes the folder name ("Clinical -- clinical documents") | State what's IN vs. OUT, or skip the signpost |
 | Copying files into a folder so the README can list them | Use a pointer row |
 | Writing a README for every leaf folder | Only signpost where navigation is ambiguous |
-| Letting READMEs accumulate without maintenance | Alfred audits on /bankcoals |
+| Letting READMEs accumulate without maintenance | the maintenance agent audits on session cooldown |
 | Putting operational state in README (current tasks, blockers) | That belongs in STATUS.md, not the signpost |
 
 ---
