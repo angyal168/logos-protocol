@@ -22,7 +22,8 @@ This document will walk you through everything.
 6. [The Roadmap -- From Basic Assistant to Autonomous Companion](#6-the-roadmap----from-basic-assistant-to-autonomous-companion)
 7. [Template: CLAUDE.md](#7-template-claudemd)
 8. [Template: PROJECT_TRACKER.md](#8-template-project_trackermd)
-9. [Troubleshooting and FAQ](#9-troubleshooting-and-faq)
+9. [Template: DECISION_LOG.md](#9-template-decision_logmd)
+10. [Troubleshooting and FAQ](#10-troubleshooting-and-faq)
 
 ---
 
@@ -103,13 +104,19 @@ This section takes you from nothing to a working AI assistant in one session. Fo
 
 ### Step 1: Install Claude Code
 
-Open your terminal and run:
+Open your terminal and run the native installer (Anthropic's current default):
+
+```
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+If you prefer npm and already have Node.js, this also works:
 
 ```
 npm install -g @anthropic-ai/claude-code
 ```
 
-If that does not work, you may need to install Node.js first. Go to nodejs.org, download the LTS version, install it, then try the command above again.
+If neither works, install Node.js first (nodejs.org, LTS version), then retry the npm command.
 
 Verify it worked:
 
@@ -138,13 +145,14 @@ touch CLAUDE.md
 
 Now open `CLAUDE.md` in any text editor and paste in the template from Section 7 of this document. Do not worry about filling in the placeholders yet -- that comes in the Imprinting Ritual (next section).
 
-### Step 4: Create Your Project Tracker
+### Step 4: Create Your Project Tracker and Decision Log
 
 ```
 touch PROJECT_TRACKER.md
+touch DECISION_LOG.md
 ```
 
-Open it and paste in the template from Section 8.
+Open `PROJECT_TRACKER.md` and paste in the template from Section 8. Open `DECISION_LOG.md` and paste in the template from Section 9. Both start nearly empty -- they fill up over time as you work.
 
 ### Step 5: Create Your Folder Structure
 
@@ -345,6 +353,33 @@ The protocol structures this into categories:
 - **System memories**: Technical details about your setup
 
 Your AI also has a self-improvement loop: when it discovers a correction or a pattern during a session, it logs it as a dated lesson. If three or more related lessons accumulate, it creates a dedicated context file. This means your AI gets measurably better over time -- not just in a vague "machine learning" way, but in a concrete, auditable, file-you-can-read way.
+
+### The Decision Log -- Why Decisions Need Their Own Memory
+
+The project tracker remembers what is happening. The memory system remembers what is true. Neither is a good home for *what was decided, why, and what would change it*.
+
+That gap is small but expensive. Without a decision log, you will:
+
+- Re-decide the same thing six months later because you forgot why you ruled it out
+- Lose the rationale when the situation changes and you should actually revisit
+- Re-litigate locked decisions because the lock is not visible to your AI or to future-you
+
+The fix is one extra file: `DECISION_LOG.md`. It lives next to your tracker. Your AI reads it at session start (after the tracker) and writes to it at session end (during the cooldown), but only when a decision was actually made -- not when one was merely discussed.
+
+Each entry captures six things:
+
+- **Date** -- when the call was made
+- **Project** -- which lane it belongs to
+- **Decision** -- the actual call, in one sentence
+- **Why** -- the reasoning that drove it (this is the part you will need later)
+- **Reversible?** -- yes or no, so future-you knows the cost of re-opening
+- **Revisit trigger** -- what would make this decision worth re-opening (e.g., "if vendor X drops support" or "after the next funding round")
+
+This is the smallest possible cure for the largest founder-time leak. It does not replace the tracker. It does not replace memory. It captures the decisions both of those would otherwise lose.
+
+A template lives at `templates/DECISION_LOG.md` and as Section 9 of this document.
+
+> **What does NOT go here.** Tasks belong in the tracker. Patterns and feedback belong in memory. Discussions that did not end in a call belong in the session log. A decision changes what you are willing to do tomorrow -- a note does not.
 
 ### The Project Tracker -- Your Single Source of Truth
 
@@ -656,7 +691,74 @@ Cloud sync creates conflict copies when two devices edit the same file simultane
 
 ---
 
-## 9. Troubleshooting and FAQ
+## 9. Template: DECISION_LOG.md
+
+```markdown
+# DECISION_LOG.md -- [YOUR AI NAME] Decision Memory
+
+> A first-class log of decisions, separate from the project tracker and the memory system.
+>
+> The tracker remembers what is happening. Memory remembers what is true.
+> The decision log remembers what was decided -- why, by whom, and what would change it.
+
+> Last updated: [DATE]
+
+---
+
+## How to Use This File
+
+Every meaningful decision goes here, including:
+
+- Architecture or tooling choices ("we use X instead of Y")
+- Scope decisions ("we are NOT doing X this quarter")
+- Naming or branding choices
+- Process changes ("we now ship via X")
+- Trade-offs that closed off an option
+
+Update this file at session end (the cooldown ritual) whenever a decision was actually made -- not when one was merely discussed.
+
+If a decision is reversible and recent, leave it in the table. If it is locked for the quarter, also list it under "Locked Decisions." If it is open, list it under "Open Decisions" and promote to the table when made.
+
+---
+
+## Decision Entries
+
+| Date | Project | Decision | Why | Reversible? | Revisit Trigger |
+|------|---------|----------|-----|-------------|-----------------|
+| [DATE] | [PROJECT] | [WHAT WAS DECIDED] | [REASONING] | [YES / NO] | [WHAT WOULD MAKE THIS WORTH RE-OPENING] |
+
+---
+
+## Locked Decisions
+
+> Decisions that are not up for re-debate this quarter. Re-open only if the revisit trigger fires.
+
+- **[DATE]** -- [LOCKED DECISION] -- _see entry above_
+
+---
+
+## Open Decisions
+
+> Decisions that need to be made soon. Promote to the table above when made.
+
+- [ ] [DECISION TO BE MADE] -- _blocked on:_ [WHAT IS BLOCKING THE CALL]
+
+---
+
+## Anti-Patterns (What Goes Elsewhere)
+
+To keep this file from becoming a dumping ground:
+
+- **Tasks** belong in the project tracker, not here. "Send the email" is a task, not a decision.
+- **Facts and patterns** belong in your AI's memory system. "User prefers terse responses" is feedback, not a decision.
+- **Discussions** that did not end in a call belong in your session log. A decision needs an outcome.
+
+If you are not sure: a decision changes what you are willing to do tomorrow. A note does not.
+```
+
+---
+
+## 10. Troubleshooting and FAQ
 
 **"Claude Code does not seem to read my CLAUDE.md."**
 
