@@ -1,4 +1,14 @@
-# The Imprint Protocol
+<p align="center">
+  <img src="assets/banner.png" alt="The Imprint Protocol" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-1FAF7A?style=flat-square&labelColor=062E24" alt="License: MIT">
+  <img src="https://img.shields.io/badge/Cost-Free-1FAF7A?style=flat-square&labelColor=062E24" alt="Free">
+  <img src="https://img.shields.io/badge/Built_for-Claude_Code-C9A06A?style=flat-square&labelColor=062E24" alt="Built for Claude Code">
+  <img src="https://img.shields.io/badge/Imprint_Ritual-17_Questions-35D6A0?style=flat-square&labelColor=062E24" alt="Imprint Ritual: 17 Questions">
+  <img src="https://img.shields.io/badge/PRs-Welcome-C9A06A?style=flat-square&labelColor=062E24" alt="PRs Welcome">
+</p>
 
 > *Forge an AI that actually knows you.*
 > *Open source. Free to use. Yours to imprint.*
